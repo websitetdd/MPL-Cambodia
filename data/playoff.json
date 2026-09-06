@@ -1,0 +1,204 @@
+{
+  "title": "MPL Cambodia 2026 Playoffs",
+  "format": "Double Elimination — Top 6",
+  "dates": "Sep 4 - 6, 2026",
+  "seedTeams": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "matches": [
+    {
+      "id": "ub1",
+      "stage": "upper",
+      "round": "Round 1",
+      "label": "Upper Bracket Round 1",
+      "teamA": {
+        "type": "seed",
+        "value": 4
+      },
+      "teamB": {
+        "type": "seed",
+        "value": 5
+      },
+      "date": "2026-09-04T19:00:00+07:00",
+      "status": "scheduled",
+      "bo": 5
+    },
+    {
+      "id": "ub2",
+      "stage": "upper",
+      "round": "Round 1",
+      "label": "Upper Bracket Round 1",
+      "teamA": {
+        "type": "seed",
+        "value": 3
+      },
+      "teamB": {
+        "type": "seed",
+        "value": 6
+      },
+      "date": "2026-09-04T21:00:00+07:00",
+      "status": "scheduled",
+      "bo": 5
+    },
+    {
+      "id": "lb1",
+      "stage": "lower",
+      "round": "Round 1",
+      "label": "Lower Bracket Round 1",
+      "teamA": {
+        "type": "ref",
+        "value": "L-ub1"
+      },
+      "teamB": {
+        "type": "ref",
+        "value": "L-ub2"
+      },
+      "date": "2026-09-05T14:00:00+07:00",
+      "status": "scheduled",
+      "bo": 5
+    },
+    {
+      "id": "ub3",
+      "stage": "upper",
+      "round": "Semifinal",
+      "label": "Upper Semifinal 1",
+      "teamA": {
+        "type": "seed",
+        "value": 1
+      },
+      "teamB": {
+        "type": "ref",
+        "value": "W-ub1"
+      },
+      "date": "2026-09-05T17:00:00+07:00",
+      "status": "scheduled",
+      "bo": 5
+    },
+    {
+      "id": "ub4",
+      "stage": "upper",
+      "round": "Semifinal",
+      "label": "Upper Semifinal 2",
+      "teamA": {
+        "type": "seed",
+        "value": 2
+      },
+      "teamB": {
+        "type": "ref",
+        "value": "W-ub2"
+      },
+      "date": "2026-09-05T19:00:00+07:00",
+      "status": "scheduled",
+      "bo": 5
+    },
+    {
+      "id": "lb2",
+      "stage": "lower",
+      "round": "Round 2",
+      "label": "Lower Bracket Round 2",
+      "teamA": {
+        "type": "ref",
+        "value": "W-lb1"
+      },
+      "teamB": {
+        "type": "ref",
+        "value": "L-ub3"
+      },
+      "date": "2026-09-05T21:00:00+07:00",
+      "status": "scheduled",
+      "bo": 5
+    },
+    {
+      "id": "lb3",
+      "stage": "lower",
+      "round": "Round 3",
+      "label": "Lower Bracket Round 3",
+      "teamA": {
+        "type": "ref",
+        "value": "W-lb2"
+      },
+      "teamB": {
+        "type": "ref",
+        "value": "L-ub4"
+      },
+      "date": "2026-09-06T13:00:00+07:00",
+      "status": "scheduled",
+      "bo": 5
+    },
+    {
+      "id": "ub5",
+      "stage": "upper",
+      "round": "Final",
+      "label": "Upper Bracket Final",
+      "teamA": {
+        "type": "ref",
+        "value": "W-ub3"
+      },
+      "teamB": {
+        "type": "ref",
+        "value": "W-ub4"
+      },
+      "date": "2026-09-06T15:00:00+07:00",
+      "status": "scheduled",
+      "bo": 5
+    },
+    {
+      "id": "lb4",
+      "stage": "lower",
+      "round": "Final",
+      "label": "Lower Bracket Final",
+      "teamA": {
+        "type": "ref",
+        "value": "W-lb3"
+      },
+      "teamB": {
+        "type": "ref",
+        "value": "L-ub5"
+      },
+      "date": "2026-09-06T17:00:00+07:00",
+      "status": "scheduled",
+      "bo": 5
+    },
+    {
+      "id": "gf",
+      "stage": "final",
+      "round": "Grand Final",
+      "label": "Grand Final",
+      "teamA": {
+        "type": "ref",
+        "value": "W-ub5"
+      },
+      "teamB": {
+        "type": "ref",
+        "value": "W-lb4"
+      },
+      "date": "2026-09-06T19:00:00+07:00",
+      "status": "scheduled",
+      "note": "Grand Final — Best of 5",
+      "bo": 5
+    },
+    {
+      "id": "gf2",
+      "stage": "final",
+      "round": "Grand Final",
+      "label": "Grand Final (Bracket Reset)",
+      "teamA": {
+        "type": "ref",
+        "value": "L-gf"
+      },
+      "teamB": {
+        "type": "ref",
+        "value": "W-gf"
+      },
+      "date": "2026-09-06T21:30:00+07:00",
+      "status": "pending",
+      "note": "Only played if the Upper Bracket winner loses the Grand Final",
+      "bo": 5
+    }
+  ]
+}

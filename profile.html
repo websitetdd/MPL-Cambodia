@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MPL Cambodia — My Profile</title>
+  <meta name="description" content="Your MPL Cambodia prediction profile — points, rank, accuracy and prediction history.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="profile">
+  <div class="loader" id="loader" role="status" aria-label="Loading">
+    <img class="l-mark" src="assets/favicon.svg" alt="MPL Cambodia">
+    <div class="l-ring"></div>
+    <div class="l-text">Loading arena</div>
+  </div>
+
+  <nav class="nav" data-component="nav-main">
+    <div class="container nav-inner">
+      <a class="nav-brand" href="index.html" aria-label="MPL Cambodia home">
+        <img src="assets/favicon.svg" alt="">
+        <span>MPL <span class="accent">Cambodia</span></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" data-nav="home">Home</a></li>
+        <li><a href="standings.html" data-nav="standings">Standings</a></li>
+        <li><a href="predictions.html" data-nav="predictions">Predictions</a></li>
+        <li><a href="profile.html" data-nav="profile" class="active">Profile</a></li>
+        <li class="admin-link hidden"><a href="admin.html" data-nav="admin">Admin</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div id="navUserArea"></div>
+        <button class="burger" id="burger" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <header class="page-header">
+      <img class="bg-img" src="assets/img/hero-arena.jpg" alt="" aria-hidden="true">
+      <div class="container">
+        <span class="eyebrow">Your prediction record</span>
+        <h1>Profile</h1>
+        <p>Your points, accuracy and every pick across the season.</p>
+      </div>
+    </header>
+
+    <div class="container" id="profileRoot">
+      <div class="card max-640 hidden" id="profileLoginGate">
+        <div class="text-center" style="padding:14px 0;">
+          <div class="eyebrow">Your stats live here</div>
+          <h2 class="section-title mt-8" style="justify-content:center;">Sign in to view your profile</h2>
+          <p class="text-2 mt-8">Create a free account or log in to see your points, rank and history.</p>
+          <button class="btn btn-gold mt-16" id="profileLoginBtn">Login / Create account</button>
+        </div>
+      </div>
+
+      <div id="profileContent" class="hidden">
+        <!-- Identity card -->
+        <section class="section" aria-label="Profile overview">
+          <div class="card glass flex-between" style="padding:24px;">
+            <div class="flex gap-12">
+              <div class="avatar" id="pfAvatar">?</div>
+              <div>
+                <h2 class="font-display" style="text-transform:uppercase; letter-spacing:.05em;" id="pfUsername">—</h2>
+                <div class="muted" style="font-size:.85rem;" id="pfJoined">Joined —</div>
+              </div>
+            </div>
+            <div class="flex gap-8">
+              <div class="text-center">
+                <div class="font-display gold" style="font-size:1.5rem; font-weight:800;" id="pfPoints">0</div>
+                <div class="muted" style="font-size:.72rem; text-transform:uppercase; letter-spacing:.1em;">Points</div>
+              </div>
+              <div class="text-center" style="padding-left:16px; border-left:1px solid var(--border);">
+                <div class="font-display" style="font-size:1.5rem; font-weight:800;" id="pfRank">—</div>
+                <div class="muted" style="font-size:.72rem; text-transform:uppercase; letter-spacing:.1em;">Rank</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Stats -->
+        <section class="section" aria-label="Statistics">
+          <div class="grid grid-3" id="pfStatsGrid"></div>
+        </section>
+
+        <!-- Season picks -->
+        <section class="section" aria-label="Season picks">
+          <div class="grid grid-2">
+            <div class="card">
+              <h3 class="mb-8">Champion pick</h3>
+              <div class="flex gap-12" id="pfChamp"></div>
+            </div>
+            <div class="card">
+              <h3 class="mb-8">Top 6 pick</h3>
+              <ol class="flex gap-8" id="pfTop6" style="flex-wrap:wrap; list-style:none;"></ol>
+            </div>
+          </div>
+        </section>
+
+        <!-- Upcoming predicted -->
+        <section class="section" aria-label="Upcoming predictions">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Already locked in</span>
+              <h2 class="section-title">Upcoming matches predicted</h2>
+            </div>
+          </div>
+          <div class="grid grid-2" id="pfUpcoming"></div>
+        </section>
+
+        <!-- Recent history -->
+        <section class="section" aria-label="Recent history">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Last picks</span>
+              <h2 class="section-title">Recent prediction history</h2>
+            </div>
+          </div>
+          <div class="table-wrap" id="pfHistory"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="brand"><img src="assets/favicon.svg" alt="">MPL Cambodia Prediction Hub</div>
+      <div>Fan prediction game — no real money involved. Data lives in your browser.</div>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="authModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+      <div class="m-head">
+        <h3 class="m-title" id="authTitle">Login</h3>
+        <button class="m-close" id="authClose" aria-label="Close dialog">×</button>
+      </div>
+      <div class="auth-tabs">
+        <button class="active" data-atab="login" type="button">Login</button>
+        <button data-atab="register" type="button">Create account</button>
+      </div>
+      <form id="authForm" novalidate>
+        <div class="field">
+          <label for="authUser">Username</label>
+          <input class="input" id="authUser" autocomplete="username" placeholder="Your username" required>
+        </div>
+        <div class="field">
+          <label for="authPass">Password</label>
+          <input class="input" id="authPass" type="password" autocomplete="current-password" placeholder="••••••••" required>
+        </div>
+        <p class="form-error hidden" id="authError"></p>
+        <button class="btn btn-gold btn-block" type="submit" id="authSubmit">Login</button>
+        <p class="form-note">Demo build — accounts are stored in your browser's LocalStorage only.</p>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast-stack" id="toastStack" aria-live="polite"></div>
+
+    <script src="js/utils.js"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="assets/vendor/supabase.min.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/scoring.js"></script>
+  <script src="js/cloud.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/pages/profile.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

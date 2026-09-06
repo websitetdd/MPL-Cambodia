@@ -1,0 +1,204 @@
+{
+  "matches": [
+    {
+      "id": "w1m1",
+      "week": 1,
+      "weekLabel": "Week 1",
+      "teamA": "flash",
+      "teamB": "pro",
+      "date": "2026-07-17T19:00:00+07:00",
+      "bo": 3,
+      "status": "finished",
+      "result": {
+        "winner": "flash",
+        "scoreA": 2,
+        "scoreB": 0
+      }
+    },
+    {
+      "id": "w1m2",
+      "week": 1,
+      "weekLabel": "Week 1",
+      "teamA": "cfu",
+      "teamB": "duck-rice",
+      "date": "2026-07-17T21:00:00+07:00",
+      "bo": 3,
+      "status": "finished",
+      "result": {
+        "winner": "cfu",
+        "scoreA": 2,
+        "scoreB": 1
+      }
+    },
+    {
+      "id": "w1m3",
+      "week": 1,
+      "weekLabel": "Week 1",
+      "teamA": "evil-eye",
+      "teamB": "queen-phoenix",
+      "date": "2026-07-18T19:00:00+07:00",
+      "bo": 3,
+      "status": "finished",
+      "result": {
+        "winner": "queen-phoenix",
+        "scoreA": 1,
+        "scoreB": 2
+      }
+    },
+    {
+      "id": "w1m4",
+      "week": 1,
+      "weekLabel": "Week 1",
+      "teamA": "galaxy",
+      "teamB": "vigor",
+      "date": "2026-07-18T21:00:00+07:00",
+      "bo": 3,
+      "status": "finished",
+      "result": {
+        "winner": "vigor",
+        "scoreA": 0,
+        "scoreB": 2
+      }
+    },
+    {
+      "id": "w1m5",
+      "week": 1,
+      "weekLabel": "Week 1",
+      "teamA": "valhalla",
+      "teamB": "sys",
+      "date": "2026-07-19T19:00:00+07:00",
+      "bo": 3,
+      "status": "finished",
+      "result": {
+        "winner": "valhalla",
+        "scoreA": 2,
+        "scoreB": 0
+      }
+    },
+    {
+      "id": "w2m1",
+      "week": 2,
+      "weekLabel": "Week 2",
+      "teamA": "flash",
+      "teamB": "sys",
+      "date": "2026-07-24T19:00:00+07:00",
+      "bo": 3,
+      "status": "finished",
+      "result": {
+        "winner": "flash",
+        "scoreA": 2,
+        "scoreB": 1
+      }
+    },
+    {
+      "id": "w2m2",
+      "week": 2,
+      "weekLabel": "Week 2",
+      "teamA": "cfu",
+      "teamB": "evil-eye",
+      "date": "2026-07-24T21:00:00+07:00",
+      "bo": 3,
+      "status": "finished",
+      "result": {
+        "winner": "cfu",
+        "scoreA": 2,
+        "scoreB": 0
+      }
+    },
+    {
+      "id": "w2m3",
+      "week": 2,
+      "weekLabel": "Week 2",
+      "teamA": "duck-rice",
+      "teamB": "vigor",
+      "date": "2026-07-25T19:00:00+07:00",
+      "bo": 3,
+      "status": "finished",
+      "result": {
+        "winner": "vigor",
+        "scoreA": 0,
+        "scoreB": 2
+      }
+    },
+    {
+      "id": "w2m4",
+      "week": 2,
+      "weekLabel": "Week 2",
+      "teamA": "queen-phoenix",
+      "teamB": "galaxy",
+      "date": "2026-07-25T21:00:00+07:00",
+      "bo": 3,
+      "status": "finished",
+      "result": {
+        "winner": "queen-phoenix",
+        "scoreA": 2,
+        "scoreB": 1
+      }
+    },
+    {
+      "id": "w2m5",
+      "week": 2,
+      "weekLabel": "Week 2",
+      "teamA": "pro",
+      "teamB": "valhalla",
+      "date": "2026-07-26T19:00:00+07:00",
+      "bo": 3,
+      "status": "finished",
+      "result": {
+        "winner": "valhalla",
+        "scoreA": 1,
+        "scoreB": 2
+      }
+    },
+    {
+      "id": "w3m1",
+      "week": 3,
+      "weekLabel": "Week 3",
+      "teamA": "flash",
+      "teamB": "cfu",
+      "date": "2026-08-07T19:00:00+07:00",
+      "bo": 3,
+      "status": "scheduled"
+    },
+    {
+      "id": "w3m2",
+      "week": 3,
+      "weekLabel": "Week 3",
+      "teamA": "duck-rice",
+      "teamB": "queen-phoenix",
+      "date": "2026-08-07T21:00:00+07:00",
+      "bo": 3,
+      "status": "scheduled"
+    },
+    {
+      "id": "w3m3",
+      "week": 3,
+      "weekLabel": "Week 3",
+      "teamA": "vigor",
+      "teamB": "valhalla",
+      "date": "2026-08-08T19:00:00+07:00",
+      "bo": 3,
+      "status": "scheduled"
+    },
+    {
+      "id": "w3m4",
+      "week": 3,
+      "weekLabel": "Week 3",
+      "teamA": "evil-eye",
+      "teamB": "pro",
+      "date": "2026-08-08T21:00:00+07:00",
+      "bo": 3,
+      "status": "scheduled"
+    },
+    {
+      "id": "w3m5",
+      "week": 3,
+      "weekLabel": "Week 3",
+      "teamA": "galaxy",
+      "teamB": "sys",
+      "date": "2026-08-09T19:00:00+07:00",
+      "bo": 3,
+      "status": "scheduled"
+    }
+  ]
+}
