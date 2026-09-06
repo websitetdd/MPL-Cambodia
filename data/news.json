@@ -1,0 +1,31 @@
+{
+  "news": [
+    {
+      "id": "n1",
+      "title": "MPL Cambodia 2026 kicks off — 10 teams, one throne",
+      "excerpt": "The new season begins with a fresh format, a stacked roster of rosters, and every single match deciding who reaches the playoffs.",
+      "body": "The MPL Cambodia 2026 regular season is officially underway. Ten of the country's best teams will battle through a Best of 3 round robin before the Top 6 advance to a double-elimination playoff. Points are hard to come by — every win counts exactly one, so dropping even a single game can decide your playoff fate. The standings tiebreakers are Points, then Head-to-Head, then Game Difference. Lock in your predictions before the first ball is cast.",
+      "date": "2026-07-14",
+      "tag": "Season Preview",
+      "image": "assets/img/news-1.jpg"
+    },
+    {
+      "id": "n2",
+      "title": "Week 2 recap: undefeated trio builds momentum",
+      "excerpt": "CFU Gaming, Team Flash KH, and Vigor Apex all sit at 2-0 after two weeks — but only Game Difference separates them heading into the Week 3 crunch.",
+      "body": "Two weeks in, three teams remain unbeaten. Vigor Apex leads on game difference with two clean 2-0 sweeps, while CFU Gaming and Team Flash KH follow close behind with identical 2-0 records. Queen Phoenix and Valhalla Cambodia are also flawless and waiting to pounce. Week 3 brings a heavyweight showdown as Team Flash KH meet CFU Gaming — a match that could define the top of the table.",
+      "date": "2026-07-27",
+      "tag": "Recap",
+      "image": "assets/img/news-2.jpg"
+    },
+    {
+      "id": "n3",
+      "title": "Playoff format revealed: double elimination, Grand Final on Sunday",
+      "excerpt": "The Top 6 advance to a double-elimination bracket from September 4. Seeding is locked by regular-season standings.",
+      "body": "The playoffs are set to begin on September 4. Seeds 1 and 2 earn a bye straight into the Upper Semifinals, while seeds 3-6 open the bracket in Upper Round 1. Losers fall into the Lower Bracket with a second chance — but only one path leads to the Grand Final on Sunday. Champion predictions are open now: pick your trophy favourite for 500 points.",
+      "date": "2026-08-05",
+      "tag": "Playoffs",
+      "image": "assets/img/news-3.jpg"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Vigor Apex logo">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#31C48D"/>
+      <stop offset="1" stop-color="#147A53"/>
+    </linearGradient>
+  </defs>
+  <path d="M48 5 L85 19 V51 C85 71 69 85 48 93 C27 85 11 71 11 51 V19 Z" fill="url(#g)"/>
+  <path d="M48 5 L85 19 V51 C85 71 69 85 48 93 C27 85 11 71 11 51 V19 Z" fill="none" stroke="#FFFFFF" stroke-opacity=".4" stroke-width="1.5"/>
+  <polyline points="34,22 48,36 62,22" fill="none" stroke="#0F1117" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="34,33 48,47 62,33" fill="none" stroke="#0F1117" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="48" y="62" text-anchor="middle" dominant-baseline="central" font-family="Orbitron, sans-serif" font-weight="800" font-size="24" fill="#0F1117" letter-spacing="1">VA</text>
+</svg>

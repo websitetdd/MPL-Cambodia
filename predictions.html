@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MPL Cambodia — Predictions</title>
+  <meta name="description" content="Predict MPL Cambodia match winners, correct scores, the Top 6 and the champion. Earn prediction points and climb the leaderboard.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="predictions">
+  <div class="loader" id="loader" role="status" aria-label="Loading">
+    <img class="l-mark" src="assets/favicon.svg" alt="MPL Cambodia">
+    <div class="l-ring"></div>
+    <div class="l-text">Loading arena</div>
+  </div>
+  <script>setTimeout(function(){var l=document.getElementById("loader");if(l)l.classList.add("hidden");},15000);</script>
+
+  <nav class="nav" data-component="nav-main">
+    <div class="container nav-inner">
+      <a class="nav-brand" href="index.html" aria-label="MPL Cambodia home">
+        <img src="assets/favicon.svg" alt="">
+        <span>MPL <span class="accent">Cambodia</span></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" data-nav="home">Home</a></li>
+        <li><a href="standings.html" data-nav="standings">Standings</a></li>
+        <li><a href="predictions.html" data-nav="predictions" class="active">Predictions</a></li>
+        <li><a href="profile.html" data-nav="profile">Profile</a></li>
+        <li class="admin-link hidden"><a href="admin.html" data-nav="admin">Admin</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div id="navUserArea"></div>
+        <button class="burger" id="burger" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <header class="page-header">
+      <img class="bg-img" src="assets/img/news-1.jpg" alt="" aria-hidden="true">
+      <div class="container">
+        <span class="eyebrow">Prediction points · Win +100 · Exact score +200</span>
+        <h1>Predictions</h1>
+        <p>Pick the winner and exact score of every match. Correct winner +100, correct score +200 — both right, 300 points.</p>
+      </div>
+    </header>
+
+    <div class="container" id="predictionsRoot">
+      <!-- Login required gate (shown by JS) -->
+      <div class="card max-640 hidden" id="predLoginGate">
+        <div class="text-center" style="padding:14px 0;">
+          <div class="eyebrow">Lock in your picks</div>
+          <h2 class="section-title mt-8" style="justify-content:center;">Sign in to predict</h2>
+          <p class="text-2 mt-8">Create a free account or log in to start earning prediction points.</p>
+          <button class="btn btn-gold mt-16" id="predLoginBtn">Login / Create account</button>
+        </div>
+      </div>
+
+      <div id="predContent" class="hidden">
+        <!-- Match predictions -->
+        <section class="section" aria-labelledby="predMatchesH">
+          <div class="container" style="padding:0;">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow" id="predWeekLabel">Scheduled matches</span>
+                <h2 class="section-title" id="predMatchesH">Match predictions</h2>
+                <p class="muted mt-8" style="font-size:.82rem;">Predictions lock 5 minutes before each match starts.</p>
+              </div>
+              <div class="flex gap-8">
+                <select class="select" id="predWeekFilter" aria-label="Filter by week" style="max-width:170px;">
+                  <option value="all">All weeks</option>
+                </select>
+              </div>
+            </div>
+            <div class="grid grid-2" id="predMatchGrid"></div>
+            <div class="empty hidden" id="predMatchEmpty">
+              <div class="e-icon">🎯</div>
+              <div>No predictable matches right now — check back before the next week kicks off.</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Season + champion -->
+        <section class="section" aria-labelledby="seasonH">
+          <div class="container" style="padding:0;">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">Season long bets</span>
+                <h2 class="section-title" id="seasonH">Season & champion</h2>
+                <p class="muted mt-8" style="font-size:.82rem;">Top 6 closes when Week 1 ends · Champion pick closes after the last regular-season week.</p>
+              </div>
+            </div>
+            <div class="grid grid-2">
+              <div class="card">
+                <h3 class="mb-8">Top 6 — regular season</h3>
+                <p class="text-2" style="font-size:.9rem;">
+                  Drag teams into your predicted final Top 6. Exact position +100, anywhere in the Top 6 +50.
+                </p>
+                <ul class="dd-list mt-16" id="top6List"></ul>
+                <button class="btn btn-gold mt-16" id="saveTop6Btn">Save Top 6</button>
+              </div>
+              <div class="card">
+                <h3 class="mb-8">Champion pick</h3>
+                <p class="text-2" style="font-size:.9rem;">
+                  Pick the team that lifts the trophy. Correct champion +500 points.
+                </p>
+                <div class="field mt-16">
+                  <label for="champSelect">Your champion</label>
+                  <select class="select" id="champSelect"><option value="">Select a team…</option></select>
+                </div>
+                <div class="flex gap-8">
+                  <button class="btn btn-violet" id="saveChampBtn">Save champion</button>
+                  <span class="badge badge-gold" id="champStatus"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Stats + leaderboard -->
+        <section class="section" aria-labelledby="statsH">
+          <div class="container" style="padding:0;">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">Your dashboard</span>
+                <h2 class="section-title" id="statsH">Statistics</h2>
+              </div>
+            </div>
+            <div class="grid grid-3 mb-24" id="statsGrid"></div>
+            <div class="grid grid-2">
+              <div class="card">
+                <h3 class="mb-16">Prediction accuracy</h3>
+                <div class="donut-wrap" id="accDonut"></div>
+                <div class="text-center muted mt-8" style="font-size:.85rem;" id="accNote">No predictions yet</div>
+              </div>
+              <div class="card">
+                <h3 class="mb-16">Points by week</h3>
+                <div id="weeklyBars"></div>
+              </div>
+            </div>
+            <div class="card mt-24">
+              <h3 class="mb-16">Top predictors</h3>
+              <div id="leaderboard"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- History + import/export -->
+        <section class="section" aria-labelledby="histH">
+          <div class="container" style="padding:0;">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">Every pick, scored</span>
+                <h2 class="section-title" id="histH">Prediction history</h2>
+              </div>
+              <div class="flex gap-8">
+                <button class="btn btn-ghost btn-sm" id="exportBtn">Export JSON</button>
+                <button class="btn btn-ghost btn-sm" id="importBtn">Import JSON</button>
+                <input type="file" id="importFile" accept="application/json,.json" class="hidden">
+              </div>
+            </div>
+            <div class="table-wrap" id="historyTable"></div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="brand"><img src="assets/favicon.svg" alt="">MPL Cambodia Prediction Hub</div>
+      <div>Fan prediction game — no real money involved. Data lives in your browser.</div>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="authModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+      <div class="m-head">
+        <h3 class="m-title" id="authTitle">Login</h3>
+        <button class="m-close" id="authClose" aria-label="Close dialog">×</button>
+      </div>
+      <div class="auth-tabs">
+        <button class="active" data-atab="login" type="button">Login</button>
+        <button data-atab="register" type="button">Create account</button>
+      </div>
+      <form id="authForm" novalidate>
+        <div class="field">
+          <label for="authUser">Username</label>
+          <input class="input" id="authUser" autocomplete="username" placeholder="Your username" required>
+        </div>
+        <div class="field">
+          <label for="authPass">Password</label>
+          <input class="input" id="authPass" type="password" autocomplete="current-password" placeholder="••••••••" required>
+        </div>
+        <p class="form-error hidden" id="authError"></p>
+        <button class="btn btn-gold btn-block" type="submit" id="authSubmit">Login</button>
+        <p class="form-note">Demo build — accounts are stored in your browser's LocalStorage only.</p>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast-stack" id="toastStack" aria-live="polite"></div>
+
+    <script src="js/utils.js"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="assets/vendor/supabase.min.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/scoring.js"></script>
+  <script src="js/cloud.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/pages/predictions.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
